@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- This is the base definition -->
+	<definition name="baseLayout" template="/WEB-INF/content/tiles/BaseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="left-pane"
+			value="/WEB-INF/content/tiles/LeftPane.jsp" />
+		<put-attribute name="header" value="/WEB-INF/content/tiles/Header.jsp" />
+		<put-attribute name="right-pane"
+			value="/WEB-INF/content/tiles/RightPane.jsp" />
+		<put-attribute name="central-pane" value="" />
+		<put-attribute name="footer" value="/WEB-INF/content/tiles/Footer.jsp" />
+	</definition>
+
+	<!-- Layout with no left and right pane -->
+	<!-- Used for profile page, settings page -->
+	<definition name="simpleLayout" template="/WEB-INF/content/tiles/SimpleLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/content/tiles/Header.jsp" />
+		<put-attribute name="central-pane" value="" />
+		<put-attribute name="footer" value="/WEB-INF/content/tiles/Footer.jsp" />
+	</definition>
+
+	<!-- Layout with no footer and right pane -->
+	<definition name="viewFriendsLayout" template="/WEB-INF/content/tiles/friendsProfile.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/content/tiles/Header.jsp" />
+		<put-attribute name="central-pane" value="" />
+		<put-attribute name="profile_menu-pane" value="" />
+
+	</definition>
+
+
+
+	<definition name="baseLayout_withoutleftPane"
+		template="/WEB-INF/content/tiles/BaseLayoutWithoutLeftPane.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/content/tiles/Header.jsp" />
+		<put-attribute name="right-pane"
+			value="/WEB-INF/content/tiles/RightPane.jsp" />
+		<put-attribute name="central-pane" value="" />
+	</definition>
+	
+	
+
+	<!-- This is for the news feeds page -->
+	<definition name="newsfeeds.tiles" extends="baseLayout">
+		<put-attribute name="title" value="News Feeds" />
+		<put-attribute name="central-pane" value="/feeds/feeds.jsp" />
+	</definition>
+
+	<!-- This is for the friend suggestions page -->
+	<definition name="friendsuggestions.tiles" extends="baseLayout">
+		<put-attribute name="title" value="People You May Know" />
+		<put-attribute name="central-pane" value="/suggestions/suggestions.jsp" />
+	</definition>
+
+	<!-- Base layout for the messages page -->
+	<definition name="messagesBaseLayout"
+		template="/WEB-INF/content/tiles/MessagesBaseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/content/tiles/Header.jsp" />
+		<put-attribute name="left-pane" value="" />
+		<put-attribute name="central-pane" value="" />
+		<put-attribute name="right-pane" value="" />
+		<put-attribute name="footer" value="/WEB-INF/content/tiles/Footer.jsp" />
+	</definition>
+
+	<!-- This is for the messages page -->
+	<definition name="inbox.tiles" extends="messagesBaseLayout">
+		<put-attribute name="title" value="Messages" />
+		<put-attribute name="central-pane" value="/messages/inbox.jsp" />
+	</definition>
+
+
+	<!-- This is the base layout for the Events page -->
+	<definition name="BaseLayoutWithoutSidePanes"
+		template="/WEB-INF/content/tiles/BaseLayoutWithoutSidePanes.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="left-pane" value="" />
+		<put-attribute name="header" value="/WEB-INF/content/tiles/Header.jsp" />
+		<put-attribute name="central-pane" value="" />
+		<put-attribute name="footer" value="/WEB-INF/content/tiles/Footer.jsp" />
+	</definition>
+
+
+	<!-- This is for the Events page -->
+	<definition name="eventsPage.tiles" extends="BaseLayoutWithoutSidePanes">
+		<put-attribute name="title" value="Events" />
+		<put-attribute name="central-pane" value="/event/eventsPage.jsp" />
+	</definition>
+
+	<!-- This is the base layout for an event's page -->
+	<definition name="baseLayoutWithoutRightPane"
+		template="/WEB-INF/content/tiles/BaseLayoutWithoutRightPane.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="left-pane"
+			value="/WEB-INF/content/tiles/LeftPane.jsp" />
+		<put-attribute name="header" value="/WEB-INF/content/tiles/Header.jsp" />
+		<put-attribute name="central-pane" value="" />
+		<put-attribute name="footer" value="/WEB-INF/content/tiles/Footer.jsp" />
+	</definition>
+
+
+
+	<!-- This is for the event page of an event -->
+	<definition name="eventPage.tiles" extends="baseLayoutWithoutRightPane">
+		<put-attribute name="title" value="Event" />
+		<put-attribute name="central-pane" value="/event/eventPage.jsp" />
+	</definition>
+	
+	<definition name="eventPagemohit.tiles" extends="baseLayoutWithoutRightPane">
+		<put-attribute name="title" value="Event" />
+		<put-attribute name="central-pane" value="/jsp/event/createdeventpage.jsp" />
+	</definition>
+
+	<!-- This is for the friends page -->
+	<definition name="friends.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="friends" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane"
+			value="/WEB-INF/content/tiles/profile_menu.jsp" />
+	</definition>
+
+	<!-- This is for the about page -->
+	<definition name="about.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="friends" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane" value="/about/about.jsp" />
+	</definition>
+	<!-- This is for the edit about page -->
+	<definition name="editabout.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="friends" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane" value="/about/aboutedit.jsp" />
+	</definition>
+
+
+	<!-- This is for the friends page -->
+	<definition name="viewFriends.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="friends" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane" value="/friends/viewFriends.jsp" />
+	</definition>
+	
+	
+		<!-- This is for the friends page -->
+	<definition name="viewFriendserror.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="friends" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane" value="/friends/noFriends.jsp" />
+	</definition>
+	
+	
+
+	<!-- This is for the timeline page -->
+	<definition name="viewtimeline.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="friends" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane" value="/timeline/timeline.jsp" />
+	</definition>
+
+
+
+
+	<!-- This is for the timeline page -->
+	<definition name="timeline.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="Timeline" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane"
+			value="/WEB-INF/content/tiles/profile_menu.jsp" />
+
+	</definition>
+	<!-- This is for the about page -->
+	<definition name="about.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="about" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane"
+			value="/about/about.jsp" />
+
+	</definition>
+
+	<definition name="error.tiles" extends="simpleLayout">
+		<put-attribute name="title" value="Messages" />
+		<put-attribute name="central-pane" value="/friends/error.jsp" />
+	</definition>
+
+	<!-- This is for settings page -->
+	<definition name="settings.tiles" extends="simpleLayout">
+		<put-attribute name="title" value="Settings" />
+		<put-attribute name="central-pane" value="/settings/settings.jsp" />
+	</definition>
+	<definition name="editsettings.tiles" extends="simpleLayout">
+		<put-attribute name="title" value="Settings" />
+		<put-attribute name="central-pane" value="/settings/editsettings.jsp" />
+	</definition>
+
+
+	
+		<!-- This is for the edit about page -->
+	<definition name="editabout.tiles" extends="viewFriendsLayout">
+		<put-attribute name="title" value="Editabout" />
+		<put-attribute name="central-pane" value="/friends/profile.jsp" />
+		<put-attribute name="profile_menu-pane"
+			value="/about/aboutedit.jsp" />
+
+	</definition>
+	
+	 <!-- jigar -->
+	 
+	 <definition name=""></definition>
+	 <definition name="groupInfo.tiles" extends="baseLayout">
+		<put-attribute name="title" value="News Feeds" />
+		
+		<put-attribute name="central-pane" value="/groups/Group.jsp" /> 
+		
+	</definition>
+
+<definition name="viewGroupMember.tiles" extends="baseLayout">
+		<put-attribute name="title" value="View Group Members" />
+		<put-attribute name="central-pane" value="/groups/ViewGroupMembers.jsp" />
+	</definition>
+	 
+
+</tiles-definitions>
